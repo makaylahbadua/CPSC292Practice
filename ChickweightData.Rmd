@@ -1,0 +1,38 @@
+---
+title: "ChickweightData Notebook"
+author: "Makaylah Badua"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+data("ChickWeight")
+times <-unique(ChickWeight$Time)
+chickcolors <- c("red", "orange", "yellow", "green")
+
+for (i in 1:4) {
+for(x in times) {
+  ifelse(ChickWeight$Diet==i &
+           ChickWeight$Time==x, ChickWeight$average[ChickWeight$Time==x &
+            ChickWeight$Diet==i] <- mean(ChickWeight$weight[ChickWeight$Time==x &
+            ChickWeight$Diet==i]),NA)
+}
+}
+average1 <-ChickWeight$average[1:12]
+average2 <-ChickWeight$average[221:232]
+average3 <-ChickWeight$average[341:352]
+average4 <-ChickWeight$average[461:472]
+average <- list(average1,average2, average3, average4)
+
+plot(ChickWeight$Time, ChickWeight$average, col =ChickWeight$Diet, pch=21, xlab = "Time", ylab ="ChickWeight Average", main = "ChickWeight Average vs Time")
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
