@@ -1,0 +1,45 @@
+---
+title: "ProjectData"
+author: "Makaylah Badua"
+output: html_document
+date: "2023-12-06"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+library("patchwork")
+```
+
+## Including Equations
+
+```{r}
+??deviation 
+```
+
+*Assigns a value of 4.58e−7 to the letter a.*
+
+```{r}
+4.58e-7 ->a
+```
+
+*Calculates the log of 2401 in base 7.*
+4
+
+```{r}
+log(2401, base=7)
+```
+
+*Calculates the square root of 56.*
+ 7.483315
+```{r}
+sqrt(56)
+```
